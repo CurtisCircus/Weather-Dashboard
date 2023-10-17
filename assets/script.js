@@ -34,7 +34,7 @@ cityTextarea.addEventListener('keydown', function (event) {
 
                 var currentCity = document.getElementById('currentCity'); // Get currentCity element
                 var currentDate = new Date();
-                currentCity.innerHTML = city + ": " + currentDate.toDateString();
+                currentCity.innerHTML = city + ": " + "(" +currentDate.toDateString() + ")";
 
                 var currentTemp = document.getElementById('currentTemp');
                 currentTemp.innerHTML = "Temp: " + temperatureFahrenheit.toFixed(1) + "°F";
