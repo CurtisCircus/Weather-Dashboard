@@ -1,11 +1,52 @@
-#forecast {
+main {
     display: flex;
-    flex-wrap: wrap; 
+    padding: 20px;
 }
 
+/* Style the content column */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Style the search content column */
+.search-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#currentweather{
+    margin-left: 30px;
+}
+
+#headerforecast{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the search bar */
+.search-bar {
+    margin-bottom: 10px;
+}
+#Weather{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+    align-items: center;
+}
+img{
+    max-width: 100px;
+    max-height: 100px;
+}
+#forecast {
+    display: flex;
+    flex-direction: row;
+}
 
 #forecast > div {
-    width: calc(10%); 
+    width: calc(17%); 
     margin: 5px; 
     padding: 5px;
     border: 1px solid #ccc; 
