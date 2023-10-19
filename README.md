@@ -53,6 +53,8 @@ The next function makes it so that when the user enters a city into the searchba
 
 This function is what makes the search history list on the webpage by retrieving the array made by the last function and creating a list item for each item in the array, then giving them the text content of each item.
 ![Alt text](assets/images/23.png)
+![Alt text](assets/images/26.png)
+![Alt text](assets/images/27.png)
 
 The last function is an event listener, so when the user clicks onto any of the list items the webpage with run the currentweather function again except with the clicked city instead of having to type and enter a city in the search textbox.
 ![Alt text](assets/images/24.png)
