@@ -1,55 +1,117 @@
+:root{
+    --black: #000000;
+    --purple: #3d2645;
+    --magenta: #832161;
+    --red: #da4167;
+    --white: #f0eff4;
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--red);
+}
+header{
+    background-color: var(--purple);
+    color: var(--red);
+    padding: 15px;
+    margin: -10px;
+}
 main {
     display: flex;
     padding: 20px;
 }
 
-/* Style the content column */
 .content {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-/* Style the search content column */
 .search-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
+}
+
+#currentweather > h2 {
+    margin-left: -100px;
 }
 
 #currentweather{
-    margin-left: 30px;
+    padding-left: 125px;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--magenta);
+    border: 1px solid var(--magenta);
+    border-radius: 15px;
+    min-width: 275px;
+    min-height: 200px;
+}
+
+.search-history{
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    border-radius: 15px;
+    padding-left: 10px;
+    min-height: 350px;
+    min-width: 200px;
+    color: var(--magenta);
+}
+li{
+background-color: var(--magenta);
+color: var(--white);
+border: 1px solid var(--white);
+border-radius: 15px;
+padding: 5px;
+margin-left: -25px;
+max-width: 150px;
 }
 
 #headerforecast{
     display: flex;
     flex-direction: column;
+    color: var(--white);
 }
-
-/* Style the search bar */
+#headerforecast > h3{
+    background-color: #3d2645;
+    padding: 10px;
+    margin: 0px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
 .search-bar {
     margin-bottom: 10px;
+    color: var(--white);
 }
+
 #Weather{
     display: flex;
     flex-direction: column;
     margin-left: 30%;
     align-items: center;
 }
+
 img{
     max-width: 100px;
     max-height: 100px;
+    background-color:#894a9e;
+    border-radius: 15px;
 }
+
 #forecast {
     display: flex;
     flex-direction: row;
 }
 
 #forecast > div {
-    width: calc(17%); 
+    min-width: 150px; 
+    min-height: 275px;
     margin: 5px; 
     padding: 5px;
-    border: 1px solid #ccc; 
+    color: var(--white);
+    border: 1px solid var(--purple);
+    background-color: var(--purple);
+    border-radius: 15px; 
     box-sizing: border-box; 
 }
 
@@ -58,4 +120,5 @@ img{
     max-height: 30px; 
     min-width: 200px;
     min-height: 30px;
+    border-radius: 15px;
 }
