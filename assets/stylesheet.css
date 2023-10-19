@@ -33,8 +33,34 @@ main {
     
 }
 
-#currentweather > h2 {
-    margin-left: -100px;
+.search-bar {
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+#cityTextarea {
+    max-width: 200px; 
+    max-height: 30px; 
+    min-width: 200px;
+    min-height: 30px;
+    border-radius: 15px;
+}
+
+.search-history{
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    border-radius: 15px;
+    padding-left: 10px;
+    min-height: 350px;
+    min-width: 200px;
+    color: var(--magenta);
+}
+
+#Weather{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+    align-items: center;
 }
 
 #currentweather{
@@ -48,23 +74,15 @@ main {
     min-height: 200px;
 }
 
-.search-history{
-    border: 1px solid var(--white);
-    background-color: var(--white);
-    border-radius: 15px;
-    padding-left: 10px;
-    min-height: 350px;
-    min-width: 200px;
-    color: var(--magenta);
+#currentCity {
+    margin-left: -100px;
 }
-li{
-background-color: var(--magenta);
-color: var(--white);
-border: 1px solid var(--white);
-border-radius: 15px;
-padding: 5px;
-margin-left: -25px;
-max-width: 150px;
+
+img{
+    max-width: 100px;
+    max-height: 100px;
+    background-color:#894a9e;
+    border-radius: 15px;
 }
 
 #headerforecast{
@@ -77,24 +95,6 @@ max-width: 150px;
     padding: 10px;
     margin: 0px;
     margin-top: 10px;
-    border-radius: 15px;
-}
-.search-bar {
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-#Weather{
-    display: flex;
-    flex-direction: column;
-    margin-left: 30%;
-    align-items: center;
-}
-
-img{
-    max-width: 100px;
-    max-height: 100px;
-    background-color:#894a9e;
     border-radius: 15px;
 }
 
@@ -115,10 +115,12 @@ img{
     box-sizing: border-box; 
 }
 
-#cityTextarea {
-    max-width: 200px; 
-    max-height: 30px; 
-    min-width: 200px;
-    min-height: 30px;
+li{
+    background-color: var(--magenta);
+    color: var(--white);
+    border: 1px solid var(--white);
     border-radius: 15px;
-}
+    padding: 5px;
+    margin-left: -25px;
+    max-width: 150px;
+    }

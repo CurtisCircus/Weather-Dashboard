@@ -32,6 +32,7 @@ cityTextarea.addEventListener('keydown', function (event) {
         currentWeather(city);
     }
 })
+
 function currentWeather(city) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
@@ -44,9 +45,7 @@ function currentWeather(city) {
         })
         .then(data => {
 
-            const mainCondition = data
-                .weather[0]
-                .main;
+            const mainCondition = data.weather[0].main;
             var currentimg = document.getElementById('currentimg');
             currentimg.src = conditionToImageMap[mainCondition] || './assets/images/01d.png';
 
@@ -59,8 +58,6 @@ function currentWeather(city) {
             var currentDate = new Date();
             currentCity.innerHTML = city + ": (" + currentDate.toDateString() + ")";
 
-            var currentimg = document.getElementById('currentimg')
-
             var currentTemp = document.getElementById('currentTemp');
             currentTemp.innerHTML = "Temp: " + temperatureFahrenheit.toFixed(1) + "°F";
             var currentWind = document.getElementById('currentWind');
@@ -71,6 +68,7 @@ function currentWeather(city) {
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+
     const ForecastapiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
     fetch(ForecastapiUrl)
         .then(response => {
@@ -104,20 +102,12 @@ function currentWeather(city) {
                         <p>Humidity: ${humidity}%</p>
                     `;
 
-                // Extract the main weather condition from the forecast data
-                const mainCondition = data
-                    .list[i * 8]
-                    .weather[0]
-                    .main;
-
-                // Create an image element
+                const mainCondition = data.list[i * 8].weather[0].main;
                 const imageElement = document.createElement('img');
                 imageElement.src = conditionToImageMap[mainCondition] || './assets/images/01d.png'; // Use a default image if the condition is not in the map
 
-                // Append the image element to the forecastDiv
                 forecastDiv.appendChild(imageElement);
             }
-
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
@@ -129,10 +119,8 @@ function saveSearchToLocalStorage(city) {
         JSON.parse(localStorage.getItem('searchHistory')) || []
     );
 
-    // Add the new search to the Set
     searchHistory.add(city);
 
-    // Convert the Set back to an array and save it to localStorage
     localStorage.setItem(
         'searchHistory',
         JSON.stringify(Array.from(searchHistory))
@@ -140,13 +128,10 @@ function saveSearchToLocalStorage(city) {
 }
 
 function updateSearchHistoryList() {
-    // Clear the existing search history list
     searchHistoryList.innerHTML = '';
 
-    // Retrieve the search history from localStorage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    // Populate the search history list
     searchHistory.forEach(city => {
         const listItem = document.createElement('li');
         listItem.textContent = city;
@@ -157,7 +142,7 @@ function updateSearchHistoryList() {
 searchHistoryList.addEventListener('click', function (event) {
     if (event.target.tagName === 'LI') {
         const clickedCity = event.target.textContent;
-        cityTextarea.value = clickedCity; // Set the search input to the clicked city
+        cityTextarea.value = clickedCity; 
         currentWeather(clickedCity);
     }
 });
